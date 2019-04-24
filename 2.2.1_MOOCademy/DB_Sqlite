@@ -1,0 +1,11 @@
+#DBB for a MOOC website
+
+#First table : Courses
+CREATE TABLE `courses` (`course_id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` TEXT, `description` TEXT);
+
+#Second table : Lessons
+CREATE TABLE `lessons` (`lesson_id` INTEGER PRIMARY KEY AUTOINCREMENT,`course_id` TEXT, `title` TEXT, `body` TEXT, FOREIGN KEY(course_id) REFERENCES courses (course_id));
+
+#Create entries:
+INSERT INTO courses (title, description) VALUES (Math, Un cours de math)
+INSERT INTO lessons (title, body) VALUES (Arithmétique, Du calcul en gros)

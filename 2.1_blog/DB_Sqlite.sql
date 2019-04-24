@@ -1,0 +1,4 @@
+CREATE TABLE `user` (`user_id` INTEGER PRIMARY KEY AUTOINCREMENT, `name` TEXT);
+CREATE TABLE `article` (`article_id` INTEGER PRIMARY KEY AUTOINCREMENT, `user_id` INTEGER, `category_id` INTEGER, FOREIGN KEY(user_id) REFERENCES user (user_id), FOREIGN KEY(categorie_id) REFERENCES categorie (categorie_id));
+CREATE TABLE `categorie` (`categorie_id` INTEGER PRIMARY KEY AUTOINCREMENT, `article_id` INTEGER, `tag_id` INTEGER, `title` TEXT, FOREIGN KEY(article_id) REFERENCES article (article_id), FOREIGN KEY(tag_id) REFERENCES tag (tag_id));
+CREATE TABLE `tag` (`tag_id` INTEGER PRIMARY KEY AUTOINCREMENT,`title` TEXT, `color` TEXT);
